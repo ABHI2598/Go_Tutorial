@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"strings"
 )
 
 func main() {
@@ -16,11 +17,17 @@ func main() {
 
 	defer response.Body.Close()
 
+	var responseString strings.Builder
+
 	databytes, err := io.ReadAll(response.Body)
 
 	if err != nil {
 		panic(err)
 	}
+
+	totalBytes, _ := responseString.Write(databytes)
+	fmt.Println("Total Bytes: ", totalBytes)
+	fmt.Println("Content is: ", responseString.String())
 
 	content := string(databytes)
 
