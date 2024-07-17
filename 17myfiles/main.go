@@ -64,3 +64,33 @@ func ReadFilesUsinfBuffer() {
 	}
 
 }
+
+func readFile() {
+
+	file, err := os.Open("./myfile.txt")
+
+	if err != nil {
+		panic(err)
+	}
+
+	defer file.Close()
+
+	buf := make([]byte, 1024)
+
+	for {
+
+		content, err := file.Read(buf)
+
+		if err == io.EOF {
+			break
+		}
+
+		if err != nil {
+			panic(err)
+		}
+
+		fmt.Printf(string(buf[:content]))
+
+	}
+
+}

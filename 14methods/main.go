@@ -10,6 +10,7 @@ func main() {
 
 	abhinav.getStatus()
 	abhinav.getLastName()
+	abhinav.getFirstName()
 	fmt.Printf("User Name is: %s and Age is: %d and LastName is: %s\n", abhinav.FirstName, abhinav.Age, abhinav.LastName)
 
 }
@@ -28,4 +29,9 @@ func (u User) getStatus() {
 func (u User) getLastName() {
 	u.LastName = "Pandey1"
 	fmt.Printf("This User2 last name is: %s\n", u.LastName)
+}
+
+func (u User) getFirstName() {
+	u.FirstName = "Adarsh"
+	fmt.Printf("User FirstName is: %s\n", u.FirstName)
 }
