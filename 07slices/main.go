@@ -19,10 +19,10 @@ func main() {
 	fmt.Println("Fruits list: ", num)
 
 	num = append(num, num[2:]...)
-	fmt.Println("Fruits list: ", num)
+	fmt.Println("Fruits list from 2 indexs: ", num)
 
 	num = append(num[3:5])
-	fmt.Println("Fruits list: ", num)
+	fmt.Println("Fruits list after slicing: ", num)
 
 	highScores := make([]int, 0)
 
